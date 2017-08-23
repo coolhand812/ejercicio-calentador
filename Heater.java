@@ -9,6 +9,7 @@ public class Heater
 {
     // instance variables
     private int temperature;
+    private int increase;
 
     /**
      * Constructor for objects of class Heater
@@ -17,6 +18,7 @@ public class Heater
     {
         // initialise instance variables
         temperature = 15;
+        increase = 3;
     }
 
     /**
