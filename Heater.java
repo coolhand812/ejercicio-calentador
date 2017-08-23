@@ -26,7 +26,12 @@ public class Heater
      */
     public int raiseTemp()
     {
-        temperature = temperature + 5;
+        if(temperature < 30)
+        {
+            temperature = temperature + increase;
+        }
+        else
+            System.out.println("you have reached the maximum temperature");
         return temperature;
     }
     
@@ -35,7 +40,12 @@ public class Heater
      */
     public int lowerTemp()
     {
-        temperature = temperature - 5;
+        if(temperature > -9)
+        {
+            temperature = temperature - increase;
+        }
+        else
+            System.out.println("you have reached the minimum temperature");
         return temperature;
     }
     
