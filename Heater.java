@@ -1,4 +1,3 @@
-
 /**
  * controls a heater.
  *
@@ -9,6 +8,8 @@ public class Heater
 {
     // instance variables
     private int temperature;
+    private int max;
+    private int min;
     private int increase;
 
     /**
@@ -18,7 +19,8 @@ public class Heater
     {
         // initialise instance variables
         temperature = 15;
-        increase = 3;
+        max = 30;
+        min = -10;
     }
 
     /**
@@ -26,12 +28,12 @@ public class Heater
      */
     public int raiseTemp()
     {
-        if(temperature < 30)
+        if(temperature < max)
         {
-            temperature = temperature + increase;
+            temperature = temperature + 5;
         }
-        else
-            System.out.println("you have reached the maximum temperature");
+            else
+            System.out.println("You have reached the maximum temperature");
         return temperature;
     }
     
@@ -40,20 +42,39 @@ public class Heater
      */
     public int lowerTemp()
     {
-        if(temperature > -9)
+        if(temperature > min)
         {
-            temperature = temperature - increase;
+            temperature = temperature - 5;
         }
-        else
-            System.out.println("you have reached the minimum temperature");
+            else
+            System.out.println("You have reached the minimum temperature");
         return temperature;
     }
     
     /**
-     * This accesses the temperature directly
+     * This method accesses the temperature directly
      */
     int checkTemp()
     {
+        return temperature;
+    }
+    
+    /**
+     * This method modifies increase or decrease in temperature directly
+     */
+    int modifyIncrease(int increase)
+    {
+        if(increase > 0)
+        {
+            temperature+=increase;
+            if(temperature > max)
+            {
+                temperature = max;
+                System.out.println("You may not exceed max temp!");
+            }
+        }
+         else
+            System.out.println("no negative numbers allowed");
         return temperature;
     }
 }
