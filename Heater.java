@@ -6,7 +6,6 @@
  */
 public class Heater
 {
-    // instance variables
     private int temperature;
     private int max;
     private int min;
@@ -17,14 +16,13 @@ public class Heater
      */
     public Heater()
     {
-        // initialise instance variables
         temperature = 15;
         max = 30;
         min = -10;
     }
 
     /**
-     * This method raises the temperature
+     * This method raises the temperature by 5 degrees.
      */
     public int raiseTemp()
     {
@@ -38,7 +36,7 @@ public class Heater
     }
     
     /**
-     * This method lowers the temperature
+     * This method lowers the temperature by 5 degrees.
      */
     public int lowerTemp()
     {
@@ -52,7 +50,7 @@ public class Heater
     }
     
     /**
-     * This method accesses the temperature directly
+     * This method returns the current temperature.
      */
     int checkTemp()
     {
@@ -60,7 +58,8 @@ public class Heater
     }
     
     /**
-     * This method modifies increase or decrease in temperature directly
+     * This method modifies increase or decrease in current temperature.
+     * @increase Is the amount of increase in temperature requested.
      */
     int modifyIncrease(int increase)
     {
